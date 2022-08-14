@@ -14,7 +14,10 @@ function App() {
         <br />
       
         <ButtonGroup size="lg" className="mb-2">
-        <Button className="button" href="#"><span>Driver</span></Button>{' '}
+          <Link to="/form">
+          <Button className="button"><span>Driver</span></Button>{' '}
+          </Link>
+        
 
         <Link to="/admin">
           <Button className="button"><span>Admin Login </span></Button>
