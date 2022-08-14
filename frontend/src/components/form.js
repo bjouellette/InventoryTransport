@@ -17,7 +17,7 @@ export default function Form() {
     <div className = "form-box">
         <h1 className = "form-title">Inventory Transport Form</h1>
         <form className = "form" onSubmit={handleSubmit(onSubmit)}>
-            <p>Driver Name:</p>
+            <p className="required" >Driver Name:</p>
             <select defaultValue={value} onChange={handleChange} {...register("Driver Name:", { required: true })}>
                 <option value="default" disabled hidden>
                     Choose your Name
@@ -74,7 +74,7 @@ export default function Form() {
             </select>
             <p>Is this trip for someone specific?</p>
             <input type="text" placeholder="ex: Dillon, Ryan, etc." {...register("Is the trip for someone specific?", {maxLength: 100})} />
-            <p>Where are you right now?</p>
+            <p className="required" >Where are you right now?</p>
             <select defaultValue={value} onChange={handleChange} {...register("Where are you right now?", { required: true })}>
                 <option value="default" disabled hidden>
                     Choose your Location
@@ -109,7 +109,7 @@ export default function Form() {
                 <option value="Volkswagen of Lee's Summit">Volkswagen of Lee's Summit</option>
                 <option value="Other">Other</option>
             </select>
-            <p>Where are you headed to?</p>
+            <p className="required" >Where are you headed to?</p>
             <select defaultValue={value} onChange={handleChange} {...register("Where are you headed to?", { required: true })}>
                 <option value="default" disabled hidden>
                     Choose a Location
@@ -144,13 +144,13 @@ export default function Form() {
                 <option value="Volkswagen of Lee's Summit">Volkswagen of Lee's Summit</option>
                 <option value="Other">Other</option>
             </select>
-            <p>Key Tag Photo</p>
+            <p className="required" >Key Tag Photo</p>
             <input type="url" placeholder="Photo Link" {...register("Key Tag Photo", {required: true})} />
-            <p>Stock Number:</p>
+            <p className="required" >Stock Number:</p>
             <input type="text" placeholder="ex. BX3746" {...register("Stock Number", {required: true})} />
-            <p>Last Eight of the VIN number:</p>
+            <p className="required" >Last Eight of the VIN number:</p>
             <input type="number" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
-            <p>Did you get gas on this trip?</p>
+            <p className="required" >Did you get gas on this trip?</p>
             <select defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
                 <option value="Yes">Yes</option>
@@ -163,7 +163,7 @@ export default function Form() {
                 <option value="4.00">$4.00</option>
             </select>
 
-            <input type="submit" />
+            <input className="submit" type="submit" />
         </form>
     </div>
   );
