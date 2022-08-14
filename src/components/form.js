@@ -109,7 +109,7 @@ export default function Form() {
                 <option value="Volkswagen of Lee's Summit">Volkswagen of Lee's Summit</option>
                 <option value="Other">Other</option>
             </select>
-            <p>Where are you headed to"</p>
+            <p>Where are you headed to?</p>
             <select defaultValue={value} onChange={handleChange} {...register("Where are you headed to?", { required: true })}>
                 <option value="default" disabled hidden>
                     Choose a Location
@@ -151,13 +151,13 @@ export default function Form() {
             <p>Last Eight of the VIN number:</p>
             <input type="number" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
             <p>Did you get gas on this trip?</p>
-            <select {...register("Did you get gas on this trip?", { required: true })}>
+            <select defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
             <p>If applicable, how much was the toll?</p>
-            <select {...register("If applicable, how much was the toll?", { required: true })}>
+            <select defaultValue={value} onChange={handleChange}{...register("If applicable, how much was the toll?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>
