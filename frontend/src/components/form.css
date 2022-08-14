@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0vw;
+    padding: 0vw;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.form-box{
+ min-width: 100%;
+ height: 100vh;
+ border: none;
+ margin: 0vw;
+ padding: 5vw;
+ position: relative;
+}
+
+.form-title{
+    font-size: 35px;
+    text-align: center;
+    color: black;
+    margin: 0 0 .5vh 0;
+}
+
+.form-box input, select{
+    display: block;
+    padding: 0rem 0rem 0rem .25rem;
+    margin: .2vw 0vw .5vw 0vw;
+    border: solid 1px black;
+}
+
+.form{
+    border: 1px solid black;
+    width: 25%;
+}
+
+.form input, select, p{
+    margin-left: 25%;
+}
