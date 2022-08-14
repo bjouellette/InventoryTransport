@@ -1,7 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function App() {
+
+export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => console.log(data);
   console.log(errors);
@@ -10,7 +11,7 @@ export default function App() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <select {...register("Driver Name:", { required: true })}>
       </select>
-      <input type="text" placeholder="Is the trip for someone specific?" {...register("Is the trip for someone specific?", {, maxLength: 100})} />
+      <input type="text" placeholder="Is the trip for someone specific?" {...register("Is the trip for someone specific?", {maxLength: 100})} />
       <select {...register("Where are you right now?", { required: true })}>
       </select>
       <select {...register("Where are you headed to?", { required: true })}>
