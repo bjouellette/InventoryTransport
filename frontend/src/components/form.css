@@ -40,12 +40,7 @@
 }
 
 .form{
-    border: ;
     width: 210px;
-}
-
-.form input, select, p{
-    margin-left:;
 }
 
 .required::after {
