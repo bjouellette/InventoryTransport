@@ -66,4 +66,14 @@
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
+    box-shadow: 0 3px #999;
+}
+
+.submit:hover {
+    background-color: #127646;
+}
+
+.submit:active {
+    box-shadow: 0 1px #666;
+    transform: translateY(4px)
 }

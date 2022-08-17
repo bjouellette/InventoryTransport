@@ -19,9 +19,7 @@ export default function Form() {
         <form className = "form" onSubmit={handleSubmit(onSubmit)}>
             <p className="required" >Driver Name:</p>
             <select defaultValue={value} onChange={handleChange} {...register("Driver Name:", { required: true })}>
-                <option value="default" disabled hidden>
-                    Choose your Name
-                </option>
+                <option value="default" disabled hidden>Choose your Name</option>
                 <option value="Ouellette, George">Ouellette, George</option>
                 <option value="Abbott, Jeff">Abbott, Jeff</option>
                 <option value="Adams, Issac">Adams, Issac</option>
@@ -76,9 +74,7 @@ export default function Form() {
             <input type="text" placeholder="ex: Dillon, Ryan, etc." {...register("Is the trip for someone specific?", {maxLength: 100})} />
             <p className="required" >Where are you right now?</p>
             <select defaultValue={value} onChange={handleChange} {...register("Where are you right now?", { required: true })}>
-                <option value="default" disabled hidden>
-                    Choose your Location
-                </option>
+                <option value="default" disabled hidden>Choose your Location</option>
                 <option value="Kia of Lee's Summit">Kia of Lee's Summit</option>
                 <option value="Kia of Lee's Summit Sales">Kia of Lee's Summit Sales</option>
                 <option value="Kia of Lee's Summit Service">Kia of Lee's Summit Service</option>
@@ -111,9 +107,7 @@ export default function Form() {
             </select>
             <p className="required" >Where are you headed to?</p>
             <select defaultValue={value} onChange={handleChange} {...register("Where are you headed to?", { required: true })}>
-                <option value="default" disabled hidden>
-                    Choose a Location
-                </option>
+                <option value="default" disabled hidden>Choose a Location</option>
                 <option value="Kia of Lee's Summit">Kia of Lee's Summit</option>
                 <option value="Kia of Lee's Summit Sales">Kia of Lee's Summit Sales</option>
                 <option value="Kia of Lee's Summit Service">Kia of Lee's Summit Service</option>
@@ -151,7 +145,7 @@ export default function Form() {
             <p className="required" >Last Eight of the VIN number:</p>
             <input type="number" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
             <p className="required" >Did you get gas on this trip?</p>
-            <select defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
+            <select className="Gas" defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -162,7 +156,6 @@ export default function Form() {
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>
             </select>
-
             <input className="submit" type="submit" />
         </form>
     </div>
