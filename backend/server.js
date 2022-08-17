@@ -1,8 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
 const app = express()
-// const { Sequelize } = require('sequelize')
-// const { addAbortSignal } = require('stream')
+const { Sequelize } = require('sequelize')
 
 // CONFIGURATION/MIDDLEWARE
 require('dotenv').config()

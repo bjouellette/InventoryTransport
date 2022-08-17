@@ -3,6 +3,7 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('InventoryTransports', {
       id: {
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
@@ -50,7 +51,7 @@ module.exports = {
       } 
     },
       {
-        sequelize,
+        Sequelize,
         modelName: 'InventoryTransport',
         tableName: 'submission',
         timestamps: false
