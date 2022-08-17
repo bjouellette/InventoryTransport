@@ -27,7 +27,7 @@
 
 .form-box input, select{
     display: block;
-    padding: 0rem 0rem 0rem .25rem;
+    padding: 0rem .5rem 0rem .5rem;
     margin: .2vw 0vw .5vw 0vw;
     border: solid 1px black;
 }
@@ -38,5 +38,9 @@
 }
 
 .form input, select, p{
-    margin-left: 25%;
+    margin-left: 10%;
+}
+
+p {
+    text-align: left;
 }

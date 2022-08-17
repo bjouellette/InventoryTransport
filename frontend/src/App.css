@@ -65,3 +65,11 @@
 .App-link {
   color: #61dafb;
 }
+
+.list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}

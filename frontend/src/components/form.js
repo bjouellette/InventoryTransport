@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './form.css'
 import { useForm } from 'react-hook-form';
-
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import logo from '../connectLogo.png';
 
 export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -14,6 +15,28 @@ export default function Form() {
   console.log(errors);
   
   return (
+    <div className="App m-3">
+      <main style={{ padding: "1rem 0" }}>
+        <Navbar bg="dark" fixed="top" >
+        <Container>
+        <Navbar.Brand>
+          <Nav className="me-auto">
+        
+          <Nav.Link href="/">
+          <img
+            src={logo}
+            width="150"
+            height="30"
+            className="d-inline-block align-top"
+            alt="Connect Logo"
+            alignContent="left"
+            /></Nav.Link>
+             </Nav>
+        </Navbar.Brand>
+        </Container>
+        </Navbar>
+        
+        
     <div className = "form-box">
         <h1 className = "form-title">Inventory Transport Form</h1>
         <form className = "form" onSubmit={handleSubmit(onSubmit)}>
@@ -165,7 +188,10 @@ export default function Form() {
 
             <input type="submit" />
         </form>
+        </div> 
+        </main>
     </div>
+
   );
     
 };

@@ -1,17 +1,37 @@
 import logo from '../connectLogo.png';
 import '../App.css';
-import Table from 'react-bootstrap/Table';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Container, Table, Nav, Button, ButtonGroup } from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
 
 export default function Admin() {
     return (
     <div className="App m-3">
       <main style={{ padding: "1rem 0" }}>
-
-        <h2 className="text-center fw-bold text-decoration-underline pb-2" style={{ color: "#13a061"}}>SUBMISSIONS</h2>
-
+      <Navbar bg="dark" fixed="top">
+        <Container>
+        <Navbar.Brand href="/">
+          <img
+            src={logo}
+            width="150"
+            height="30"
+            className="d-inline-block align-top"
+            alt="Connect Logo"
+            alignContent="left"
+            />
+        </Navbar.Brand>
+        <ButtonGroup size="lg" className="mb-2">
+        <Link to="/report">
+          <Button className="button" style={{ fontSize: "15px", padding: "10px", width: "200px"}}><span>Reports</span></Button>
+        </Link>
+        </ButtonGroup>
+        </Container>
+        </Navbar>
+        
+        <h2 className="text-center fw-bold text-decoration-underline pb-2" style={{ color: "#14A062", paddingTop: "3rem"}}>SUBMISSIONS</h2>
         <Table striped bordered hover>
-          <thead className="bg-info">
+       
+          <thead style={{backgroundColor:"#0099D8", color:"white"}}>
             <tr>
                 <th scope="col">Driver Name</th>
                 <th scope="col">Specific Trip</th>
@@ -48,7 +68,6 @@ export default function Admin() {
             </tr>
         </tbody>
         </Table>
-
 
       </main>
     </div>
