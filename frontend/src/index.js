@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Form from "./components/form";
 import Admin from "./components/admin";
+import Report from "./components/report"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -16,6 +17,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="admin" element={<Admin />} />
       <Route path="form" element={<Form />} />
+      <Route path="report" element={<Report />}/>
     </Routes>
   </BrowserRouter>
   </React.StrictMode>
