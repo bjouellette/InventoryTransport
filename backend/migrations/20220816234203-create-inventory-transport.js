@@ -20,18 +20,16 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      other1: {
-        type: Sequelize.STRING
-      },
       end: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      other2: {
-        type: Sequelize.STRING
+      keytag: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       stock: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
       last8: {
@@ -41,9 +39,6 @@ module.exports = {
       gas: {
         type: Sequelize.BOOLEAN,
         allowNull: false
-      },
-      gas_amount: {
-        type: Sequelize.STRING
       },
       toll: {
         type: Sequelize.INTEGER,

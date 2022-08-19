@@ -166,7 +166,7 @@ export default function Form() {
             <p className="required" >Stock Number:</p>
             <input type="text" placeholder="ex. BX3746" {...register("Stock Number", {required: true})} />
             <p className="required" >Last Eight of the VIN number:</p>
-            <input type="number" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
+            <input type="text" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
             <p className="required" >Did you get gas on this trip?</p>
             <select className="Gas" defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
