@@ -1,6 +1,6 @@
 # Inventory Transport Application
--This application's intended use is for a vehicle delivery company's drivers to be able to submit their trips to their administrators.
--There is a form, admin submission view page, and a reporting page in this application
+- This application's intended use is for a vehicle delivery company's drivers to be able to submit their trips to their administrators.
+- There is a form, admin submission view page, and a reporting page in this application
 
 ## Bugs
 - We have a bug that does not cause an error to be thrown when submitting an invalid form based on the required fields.
