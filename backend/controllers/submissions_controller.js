@@ -1,12 +1,13 @@
 // DEPENDENCIES
 const submissions = require('express').Router()
-const db = require('../components')
+const db = require('../models')
 const { Submission } = db
 
 // FIND ALL SUBMISSIONS
 submissions.get('/', async (req, res) => {
     try {
         const foundSubmission = await Submission.findAll()
+        console.log(JSON.stringify(foundSubmission))
         res.status(200).json(foundSubmissions)
     } catch (error) {
         res.status(500).json(error)
@@ -28,6 +29,7 @@ submissions.get('/:id', async (req, res) => {
 // CREATE SUBMISSION
 submissions.post('/', async (req, res) => {
     try {
+        console.log(req.body)
         const newSubmission = await Submission.create(req.body)
         res.status(200).json({
             message: 'Successfully created new submission',
