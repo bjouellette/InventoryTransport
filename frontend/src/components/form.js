@@ -6,7 +6,12 @@ import logo from '../connectLogo.png';
 
 export default function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = async data => {
+    let res = await fetch("https://localhost:3000/post", {
+    method: "POST",
+    body: JSON.stringify(data)})
+  }
+
   const [value, setValue] = useState("default");
 
   const handleChange = (e) => {
@@ -44,7 +49,7 @@ export default function Form() {
         <h1 className = "form-title">Inventory Transport Form</h1>
         <form className = "form" onSubmit={handleSubmit(onSubmit)}>
             <p className="required" >Driver Name:</p>
-            <select defaultValue={value} onChange={handleChange} {...register("Driver Name:", { required: true })}>
+            <select defaultValue={value} onChange={handleChange} {...register("driver_name", { required: true })}>
                 <option value="default" disabled hidden>Choose your Name</option>
                 <option value="Ouellette, George">Ouellette, George</option>
                 <option value="Abbott, Jeff">Abbott, Jeff</option>
@@ -169,7 +174,7 @@ export default function Form() {
             <p className="required" >Stock Number:</p>
             <input type="text" placeholder="ex. BX3746" {...register("Stock Number", {required: true})} />
             <p className="required" >Last Eight of the VIN number:</p>
-            <input type="number" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
+            <input type="text" placeholder="Last 8 on VIN" {...register("Last Eight of the VIN number:", {required: true})} />
             <p className="required" >Did you get gas on this trip?</p>
             <select className="Gas" defaultValue={value} onChange={handleChange}{...register("Did you get gas on this trip?", { required: true })}>
                 <option value="default" disabled hidden>Choose One</option>
