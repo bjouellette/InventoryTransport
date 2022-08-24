@@ -5,6 +5,7 @@
 ## Bugs
 - We have a bug that does not cause an error to be thrown when submitting an invalid form based on the required fields.
 - The reporting page is not yet linked to the database that will show data metrics.
+- Heroku application needed to be deployed with 2 repositories and will try to get completed before turn in 8/26.
 
 ## Future Updates
 - We would like to create a database to hold all available options for easy access to make adjustments.
