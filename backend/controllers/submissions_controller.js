@@ -2,14 +2,16 @@
 const submissions = require('express').Router()
 const db = require('../models')
 const { Submission } = db
-
+// const Submission = require('../models/submission')
 // FIND ALL SUBMISSIONS
 submissions.get('/', async (req, res) => {
     try {
         const foundSubmission = await Submission.findAll()
+        console.log('string')
         console.log(JSON.stringify(foundSubmission))
         res.status(200).json(foundSubmissions)
     } catch (error) {
+        console.log(error)
         res.status(500).json(error)
     }
 })
