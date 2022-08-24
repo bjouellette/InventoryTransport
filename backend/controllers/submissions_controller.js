@@ -9,7 +9,7 @@ submissions.get('/', async (req, res) => {
         const foundSubmission = await Submission.findAll()
         console.log('string')
         console.log(JSON.stringify(foundSubmission))
-        res.status(200).json(foundSubmissions)
+        res.status(200).json(foundSubmission)
     } catch (error) {
         console.log(error)
         res.status(500).json(error)

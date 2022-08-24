@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('InventoryTransports', {
+    await queryInterface.createTable('submissions', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -47,8 +47,8 @@ module.exports = {
     },
       {
         Sequelize,
-        modelName: 'InventoryTransport',
-        tableName: 'submission',
+        modelName: 'Submission',
+        tableName: 'submissions',
         timestamps: false
     });
   },
