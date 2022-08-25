@@ -4,53 +4,52 @@ const {
 } = require('sequelize');
 const { DataTypes } = require('sequelize/types');
 module.exports = (sequelize, DataTypes) => {
-    class Submission extends Model {}
-}
-
+    class Submission extends Model {
+        static associate(models) {}
+    }}
 Submission.init({
             name: {
-                DataTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             trip: {
-                DataTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             start: {
-                DataTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             other1: {
-                DataTypes.STRING
+                type: DataTypes.STRING
             },
             end: {
-                DataTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             other2: {
-                DataTypes.STRING
+                type: DataTypes.STRING
             },
             stock: {
-                DataTypes.INTEGER,
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             last8: {
-                DataTypes.STRING,
+                type: DataTypes.STRING,
                 allowNull: false
             },
             gas: {
-                DataTypes.BOOLEAN,
+                type: DataTypes.BOOLEAN,
                 allowNull: false
             },
             gas_amount: {
-                DataTypes.STRING
+                type: DataTypes.STRING
             },
             toll: {
-                DataTypes.INTEGER
-          }, {
+                type: DataTypes.INTEGER
+          }
+        }, {
             sequelize,
             modelName: 'Submission',
           });
-          return Submission;
-        };
-})
+          Submission;
