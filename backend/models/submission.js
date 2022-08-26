@@ -20,7 +20,7 @@ Submission.init({
             },
             trip: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: true
             },
             start: {
                 type: DataTypes.STRING,
@@ -54,7 +54,7 @@ Submission.init({
             // },
             toll: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: true
           }
         }, {
             sequelize,

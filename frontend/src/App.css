@@ -43,6 +43,10 @@
   .button:hover span {
     padding-right: 25px;
   }
+
+  .button:hover {
+    background-color: #0099D8;
+  }
   
   .button:hover span:after {
     opacity: 1;
