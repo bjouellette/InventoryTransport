@@ -14,7 +14,7 @@ module.exports = {
       },
       trip: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       start: {
         type: Sequelize.STRING,
@@ -42,7 +42,7 @@ module.exports = {
       },
       toll: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
       } 
     },
       {

@@ -5,12 +5,25 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../connectLogo.png';
 
 export default function Form() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = async data => {
-    let res = await fetch("https://localhost:3000/post", {
-    method: "POST",
-    body: JSON.stringify(data)})
-  }
+  const { register,  handleSubmit,formState: { errors } } = useForm();
+  const onSubmit = async (data) => {
+    data.preventDefault();
+    try {
+        await fetch('http://localhost:3001/submissions', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(this.state)
+            }).then(function(response){
+                console.log(response)
+                return response.json();
+            });
+        }
+    catch (error){
+        console.log(error);
+    }
+}
 
   const [value, setValue] = useState("default");
 
@@ -47,7 +60,8 @@ export default function Form() {
         
     <div className = "form-box">
         <h1 className = "form-title">Inventory Transport Form</h1>
-        <form className = "form" onSubmit={handleSubmit(onSubmit)}>
+        <form className='form' onSubmit={handleSubmit(onSubmit)}>
+        {/* <form className = "form" onSubmit={this.handleSubmit} action="http://localhost:3001/submissions" method='post'> */}
             <p className="required" >Driver Name:</p>
             <select defaultValue={value} onChange={handleChange} {...register("driver_name", { required: true })}>
                 <option value="default" disabled hidden>Choose your Name</option>
@@ -191,6 +205,7 @@ export default function Form() {
             <input className="reset" type="reset" />
         </form>
         </div> 
+        <br></br>
         </main>
     </div>
 
