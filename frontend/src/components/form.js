@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../connectLogo.png';
 
+
 export default function Form() {
   const { register,  handleSubmit,formState: { errors } } = useForm();
   const onSubmit = async (data) => {
@@ -201,7 +202,7 @@ export default function Form() {
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>
             </select>
-            <input className="submit" type="submit" onClick={(subComplete)} />
+            <input className="submit" type="submit" onClick={(onSubmit, subComplete)} />
             <input className="reset" type="reset" />
         </form>
         </div> 
