@@ -9,7 +9,7 @@
 - Heroku application was not able to deploy on time due to working on application.
 
 - Messages were sent for assistance Thursday evening 8/25 to both TA and instructor about not being able to connect submission to backend and did not receive a response. 
-- pgAdmin is connected and does populate data to the backend, just not vice versa. Postman 'GET' request works, but errors arise on 'POST'about null values even though allow null values is set to true.
+- pgAdmin is connected and does populate data to the backend, just not vice versa. Postman 'GET' request works, but errors arise on 'POST' about null values even though allow null values is set to true.
 
 ## Future Updates
 - We would like to create a database to hold all available options for easy access to make adjustments.
