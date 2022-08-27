@@ -3,13 +3,17 @@
 - There is a form, admin submission view page, and a reporting page in this application
 
 ## Bugs
-- We have a bug that does not cause an error to be thrown when submitting an invalid form based on the required fields.
-- The reporting page is not yet linked to the database that will show data metrics.
-- Heroku application needed to be deployed with 2 repositories and will try to get completed before turn in 8/26.
+- Does not show error when submitting an invalid form based on the required fields.
+- Select fields allowed for submission of default select answer.
+- The reporting page is not yet linked to the database that will show data metrics (placeholder data in place)
+- Heroku application was not able to deploy on time due to working on application.
+
+- Messages were sent for assistance Thursday evening 8/25 to both TA and instructor about not being able to connect submission to backend and did not receive a response. 
+- pgAdmin is connected and does populate data to the backend, just not vice versa. Postman 'GET' request works, but errors arise on 'POST'about null values even though allow null values is set to true.
 
 ## Future Updates
 - We would like to create a database to hold all available options for easy access to make adjustments.
-- A different form library would be used to make the error bug easier to manage.
+- A different form library would be used to make the error on required fields bug easier to manage.
 
 ## Organization
 - Front End contains all of the source code for the React application
@@ -24,7 +28,3 @@
 - Change into the Back End directory
 - `npm install`
 - `npm start`
-
-# Inventory Transport Form Bugs
-- Does not show error on required fields if requirements aren't met
-- Select fields allow for submission of default select answer
