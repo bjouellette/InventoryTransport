@@ -5,6 +5,7 @@ import App from './App';
 import Form from "./components/form";
 import Admin from "./components/admin";
 import Report from "./components/report"
+import Manual from "./components/manual"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -18,6 +19,7 @@ root.render(
       <Route path="admin" element={<Admin />} />
       <Route path="form" element={<Form />} />
       <Route path="report" element={<Report />}/>
+      <Route path="manual" element={<Manual />}/>
     </Routes>
   </BrowserRouter>
   </React.StrictMode>

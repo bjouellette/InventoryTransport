@@ -7,8 +7,8 @@ import logo from '../connectLogo.png';
 
 export default function Form() {
   const { register,  handleSubmit,formState: { errors } } = useForm();
-  const onSubmit = async (data) => {
-    data.preventDefault();
+  const onSubmit = async (e) => {
+    e.preventDefault();
     try {
         await fetch('http://localhost:3001/submissions', {
             method: 'POST',

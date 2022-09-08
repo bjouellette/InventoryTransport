@@ -26,9 +26,7 @@ Submission.init({
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            // other1: {
-            //     type: DataTypes.STRING
-            // },
+          
             end: {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -49,9 +47,7 @@ Submission.init({
                 type: DataTypes.BOOLEAN,
                 allowNull: false
             },
-            // gas_amount: {
-            //     type: DataTypes.STRING
-            // },
+       
             toll: {
                 type: DataTypes.INTEGER,
                 allowNull: true

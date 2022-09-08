@@ -28,7 +28,10 @@ export default function Admin() {
         </Container>
         </Navbar>
         
-        <h2 className="text-center fw-bold text-decoration-underline pb-2" style={{ color: "#14A062", paddingTop: "3rem"}}>SUBMISSIONS</h2>
+        <h2 className="text-center fw-bold text-decoration-underline pb-2" style={{ color: "#14A062", paddingTop: "3rem"}}>SUBMISSIONS </h2>
+      <Link to="/manual"><Button className="button_plus" title='Add a Trip Manually'> </Button></Link> <br></br><br></br>
+      
+        
         <Table striped bordered hover>
        
           <thead style={{backgroundColor:"#0099D8", color:"white"}}>
