@@ -18,6 +18,10 @@ export default function Form() {
     setValue(e.target.value);
   };
   console.log(errors);
+
+  function subComplete() {
+    alert("\nSubmission Complete!\n\nClick OK")
+  }
   
   return (
     <div className="App m-3">
@@ -34,7 +38,6 @@ export default function Form() {
             height="30"
             className="d-inline-block align-top"
             alt="Connect Logo"
-            alignContent="left"
             /></Nav.Link>
              </Nav>
         </Navbar.Brand>
@@ -184,7 +187,8 @@ export default function Form() {
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>
             </select>
-            <input className="submit" type="submit" />
+            <input className="submit" type="submit" onClick={(subComplete)} />
+            <input className="reset" type="reset" />
         </form>
         </div> 
         </main>
