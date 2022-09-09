@@ -1,6 +1,6 @@
 {
   "name": "inventory-transport",
-  "proxy":"http://127.0.0.1:3003",
+  "proxy": "http://127.0.0.1:3003",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sequelize": "^6.21.3",
     "web-vitals": "^2.1.4"
   },

@@ -13,7 +13,9 @@ export default function App() {
     end: '',
     keytag: '',
     stock: '',
-    last8: ''
+    last8: '',
+    gas: '',
+    toll: ''
   })
 
 async function handleSubmit(e) {
@@ -62,12 +64,12 @@ async function handleSubmit(e) {
       <input type="text" id="keytag" value={driver.keytag} name="driver[keytag]" placeholder="Key Tag" onChange={e => setDriver({ ...driver, keytag: e.target.value })}/>
       <input type="text" id="stock" value={driver.stock} name="driver[stock]" placeholder="Stock Number" onChange={e => setDriver({ ...driver, stock: e.target.value })}/>
       <input type="text" id="last8" value={driver.last8} name="driver[last8]" placeholder="Last 8 of VIN" onChange={e => setDriver({ ...driver, last8: e.target.value })}/>    
-            <select className="Gas" value={driver.gas} name="driver[gas] " onChange={e => setDriver({ ...driver, gas: e.target.value })}>
+            <select id="gas" className="Gas" value={driver.gas} name="driver[gas] " onChange={e => setDriver({ ...driver, gas: e.target.value })}>
                 <option value="default" hidden >Did you get gas?</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            <select value={driver.toll} name="driver[toll] " onChange={e => setDriver({ ...driver, toll: e.target.value })}>
+            <select id="toll" value={driver.toll} name="driver[toll] " onChange={e => setDriver({ ...driver, toll: e.target.value })}>
                 <option value="default"  hidden>How much was the toll?</option>
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>

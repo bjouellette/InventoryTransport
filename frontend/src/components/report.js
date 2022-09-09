@@ -1,3 +1,5 @@
+// not operational
+
 import logo from '../connectLogo.png';
 import '../App.css';
 import { Navbar, Container, Button, ButtonGroup, Card, CardGroup} from 'react-bootstrap';
