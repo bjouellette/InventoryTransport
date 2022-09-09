@@ -1,24 +1,34 @@
 import {React, useState} from 'react';
 import './form.css'
-import { useForm } from 'react-hook-form';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../connectLogo.png';
 
 export default function App() {
-  const { register} = useForm();
-  const DriverForm = props => {
-    const [driver, setDriver] = useState(props.driver)
-  const submit = (e) => {
+  const navigate = useNavigate()
+  const [driver, setDriver] = useState({
+    name: '',
+    trip: '',
+    start: '',
+    end: '',
+    keytag: '',
+    stock: '',
+    last8: ''
+  })
+
+async function handleSubmit(e) {
     e.preventDefault();
-  fetch('http://localhost:3001/submissions', {
+  await fetch('/submissions', {
     method: "Post",
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify(driver)
   }) 
-  .then(res => res.json())
-  .then(json => setDriver(json.driver))
+  // .then(res => res.json())
+  // .then(json => setDriver(json.driver))
+  navigate.pushState(`/`)
   }
 
 
@@ -44,20 +54,20 @@ export default function App() {
         </Navbar>
         <div className = "form-box">
         <h1 className = "form-title">Add a New Trip Below</h1>
-    <form className="form" onSubmit={submit}>
-      <input type="text"  value={driver.name} name="driver[name]" placeholder="Driver Name" onChange={e => setDriver({ ...driver, name: e.target.value })} {...register("Driver Name", {})} />
-      <input type="text"  value={driver.trip} name="driver[trip]" placeholder="Trip Name" onChange={e => setDriver({ ...driver, trip: e.target.value })} {...register("Trip Name", {})} />
-      <input type="text"  value={driver.start} name="driver[start]" placeholder="Start Location" onChange={e => setDriver({ ...driver, start: e.target.value })} {...register("Start Location", {})} />
-      <input type="text"  value={driver.end} name="driver[end]" placeholder="End Location" onChange={e => setDriver({ ...driver, end: e.target.value })} {...register("End Location", {})} />
-      <input type="text"  value={driver.tag} name="driver[tag]" placeholder="Key Tag" onChange={e => setDriver({ ...driver, tag: e.target.value })} {...register("Key Tag", {})} />
-      <input type="text"  value={driver.stock} name="driver[stock]" placeholder="Stock Number" onChange={e => setDriver({ ...driver, stock: e.target.value })} {...register("Stock Number", {})} />
-      <input type="text"  value={driver.vin} name="driver[vin]" placeholder="Last 8 of VIN" onChange={e => setDriver({ ...driver, vin: e.target.value })} {...register("Last 8 of VIN", {})} />    
-            <select className="Gas" value={driver.gas} name="driver[gas] " onChange={e => setDriver({ ...driver, gas: e.target.value })}{...register("Did you get gas on this trip?", { required: true })}>
+    <form className="form" onSubmit={handleSubmit}>
+      <input type="text" id="name"  value={driver.name} name="driver[name]" placeholder="Driver Name" onChange={e => setDriver({ ...driver, name: e.target.value })}/>
+      <input type="text" id="trip"  value={driver.trip} name="driver[trip]" placeholder="Trip Name" onChange={e => setDriver({ ...driver, trip: e.target.value })}/>
+      <input type="text" id="start" value={driver.start} name="driver[start]" placeholder="Start Location" onChange={e => setDriver({ ...driver, start: e.target.value })}/>
+      <input type="text" id="end" value={driver.end} name="driver[end]" placeholder="End Location" onChange={e => setDriver({ ...driver, end: e.target.value })}/>
+      <input type="text" id="keytag" value={driver.keytag} name="driver[keytag]" placeholder="Key Tag" onChange={e => setDriver({ ...driver, keytag: e.target.value })}/>
+      <input type="text" id="stock" value={driver.stock} name="driver[stock]" placeholder="Stock Number" onChange={e => setDriver({ ...driver, stock: e.target.value })}/>
+      <input type="text" id="last8" value={driver.last8} name="driver[last8]" placeholder="Last 8 of VIN" onChange={e => setDriver({ ...driver, last8: e.target.value })}/>    
+            <select className="Gas" value={driver.gas} name="driver[gas] " onChange={e => setDriver({ ...driver, gas: e.target.value })}>
                 <option value="default" hidden >Did you get gas?</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            <select value={driver.gas} name="driver[gas] " onChange={e => setDriver({ ...driver, gas: e.target.value })} {...register("If applicable, how much was the toll?", { required: true })}>
+            <select value={driver.toll} name="driver[toll] " onChange={e => setDriver({ ...driver, toll: e.target.value })}>
                 <option value="default"  hidden>How much was the toll?</option>
                 <option value="1.75">$1.75</option>
                 <option value="4.00">$4.00</option>
@@ -73,5 +83,5 @@ export default function App() {
     
   );
 }
-}
+
   
