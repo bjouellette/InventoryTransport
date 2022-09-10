@@ -1,6 +1,13 @@
 # Inventory Transport Application
+
+## UPDATE
+- 09.09.22 everything is there acting like it should work, but have had 0 successful attempts.
+  - admin.js, basicTable.js, and manual.js are the pages that were managed on all recent updates to have working code. 
+  - Worked with 2 different instructors and reccomendation is to start fresh with more time.
+  - This project will be worked on personally outside of the scopes of the deadline of Midnight tonight.
+
 - This application's intended use is for a vehicle delivery company's drivers to be able to submit their trips to their administrators.
-- There is a form, admin submission view page, and a reporting page in this application
+- There is a form, admin submission view page, and a reporting page in this application.
 
 ## Bugs
 - Does not show error when submitting an invalid form based on the required fields.
