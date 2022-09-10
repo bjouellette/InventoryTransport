@@ -39,6 +39,7 @@ export default function BasicTable({ columns, data }) {
         <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row);
+            
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {

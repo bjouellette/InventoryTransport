@@ -3,7 +3,7 @@ import '../App.css';
 import { Navbar, Container, Nav, Button, ButtonGroup } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import React, {useState, useEffect} from "react";
-import BasicTable from "./BasicTable";
+import BasicTable from "./basicTable";
 
  
 export default function Admin() {
@@ -14,6 +14,7 @@ export default function Admin() {
   const fetchData = async () => {
     const response = await fetch ('/submissions')
     const data = await response.json()
+    console.log(response)
     setSubmissions(data);
   }
   const columns = React.useMemo(
@@ -61,8 +62,8 @@ export default function Admin() {
     ],
     []
   );
-  const data = React.useMemo(() => submissions, []);
-
+  // const data = React.useMemo(() => submissions, []);
+// console.log(data)
     return (
     <div className="App m-3">
       <main style={{ padding: "1rem 0" }}>
@@ -75,7 +76,6 @@ export default function Admin() {
             height="30"
             className="d-inline-block align-top"
             alt="Connect Logo"
-        
             />
         </Navbar.Brand>
         {/* <ButtonGroup size="lg" className="mb-2">
@@ -86,10 +86,11 @@ export default function Admin() {
         </Container>
         </Navbar>
         
-        <h2 className="text-center fw-bold text-decoration-underline pb-2" style={{ color: "#14A062", paddingTop: "3rem"}}>SUBMISSIONS </h2>
+        <h2 className="text-center fw-bold pb-2" style={{ color: "#14A062", paddingTop: "3rem"}}>Add a Trip</h2>
       <Link to="/manual"><Button className="button_plus" title='Add a Trip Manually'> </Button></Link> <br></br><br></br> 
         
-        <>{submissions && <BasicTable columns={columns} data={data}/>}</>
+        <>{submissions && <BasicTable columns={columns} data={submissions}/>}</>
+
 
       </main>
     </div>

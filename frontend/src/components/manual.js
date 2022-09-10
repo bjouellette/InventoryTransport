@@ -58,7 +58,7 @@ async function handleSubmit(e) {
         <h1 className = "form-title">Add a New Trip Below</h1>
     <form className="form" onSubmit={handleSubmit}>
       <input type="text" id="name"  value={driver.name} name="driver[name]" placeholder="Driver Name" onChange={e => setDriver({ ...driver, name: e.target.value })}/>
-      <input type="text" id="trip"  value={driver.trip} name="driver[trip]" placeholder="Trip Name" onChange={e => setDriver({ ...driver, trip: e.target.value })}/>
+      <input type="text" id="trip"  value={driver.trip} name="driver[trip]" placeholder="Requested By" onChange={e => setDriver({ ...driver, trip: e.target.value })}/>
       <input type="text" id="start" value={driver.start} name="driver[start]" placeholder="Start Location" onChange={e => setDriver({ ...driver, start: e.target.value })}/>
       <input type="text" id="end" value={driver.end} name="driver[end]" placeholder="End Location" onChange={e => setDriver({ ...driver, end: e.target.value })}/>
       <input type="text" id="keytag" value={driver.keytag} name="driver[keytag]" placeholder="Key Tag" onChange={e => setDriver({ ...driver, keytag: e.target.value })}/>
